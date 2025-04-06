@@ -10,19 +10,18 @@ This project implements a rule-based fraud risk scoring system to estimate the p
 4. **Age-Based Risk Adjustments**:
     - Young Customers (18-25): Large transactions (>$500) are considered unusual.
     - Older Customers (60+): Digital transactions (e.g., online purchases, cryptocurrency) may indicate fraud.
+5. **High-Risk Locations**: Transactions originating from known high-risk regions are given a higher score.
+6. **Rapid Transaction Frequency**: If a transaction occurs within 1 hour of a user’s previous one, it is flagged as suspicious due to potential bot or automation behavior.
 
 ### How It Works:
-- Each transaction starts with a base fraud risk score of 0.
-- Based on the conditions above, points are added to the score.
-- The score is then normalized between 0 and 1 to make it comparable across all transactions.
+- Each transaction starts with a base fraud risk score of `0`.
+- Risk points are added based on the conditions above.
+- A flag `HighRiskFlag` is set to `True` for transactions scoring 4 or more points before normalization.
+- The final `FraudRiskScore` is normalized between 0 and 1 to ensure comparability across transactions.
 
 # Output:
-- The processed dataset includes a new column: `FraudRiskScore`, which helps analyze fraud trends in Power BI.
+The processed dataset includes a new column: 
 
-
-
-
-
-
-
-
+- `FraudRiskScore`: A normalized score from 0 to 1.
+- `HighRiskFlag`: A boolean indicator for clearly high-risk transactions.
+- Other engineered features like `UserTransactionCount` and `TimeSinceLastTransaction` for further analysis.

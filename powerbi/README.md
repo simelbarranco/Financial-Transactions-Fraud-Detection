@@ -1,4 +1,4 @@
-# Power BI Fraud Detection Dashboard 📊
+# Fraud Detection Dashboard 📊
 
 ## Overview
 
@@ -8,7 +8,7 @@ This project implements an end-to-end Power BI dashboard for fraud detection usi
 
 Below are the 7 key visualizations included in the dashboard, along with their business applications. They will be named `Vn` ('V' for visualization) in Power BI, for example: V1, V2, etc.
 
-### 1️⃣ Fraud Risk Distribution (Histogram)
+### 1️⃣ Fraud Risk Score Distribution
 
 **Purpose**: Visualizes the distribution of fraud risk scores across all transactions.
 
@@ -16,3 +16,10 @@ Below are the 7 key visualizations included in the dashboard, along with their b
 - Identifies the proportion of transactions with high fraud risk.
 - Helps determine a fraud risk threshold for manual reviews.
 
+### 2️⃣ Fraud Risk by Customer Age Group
+
+**Purpose**: Understand which age groups are more affected by fraudulent transactions.
+
+**Business Value**:
+- Helps detect age-specific fraud trends, such as young users making unusually high transactions.
+- Supports targeted fraud education programs for high-risk age groups.
